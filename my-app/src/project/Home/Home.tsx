@@ -4,12 +4,12 @@ import { useDrag } from 'react-use-gesture';
 import "./Home.scss"
 
 const cards = [
-    'https://upload.wikimedia.org/wikipedia/commons/f/f5/RWS_Tarot_08_Strength.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/5/53/RWS_Tarot_16_Tower.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/9/9b/RWS_Tarot_07_Chariot.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/d/db/RWS_Tarot_06_Lovers.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/RWS_Tarot_02_High_Priestess.jpg/690px-RWS_Tarot_02_High_Priestess.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg',
+    'https://downloader.disk.yandex.ru/preview/618e135cd0c3824cc672485bb6a9b2954ea77243c93b8de6e431ff2c87035b01/68c0c54e/y2MDUqTEzkM6025LruM9ZJKcoBmDNUSMFeJU9othDsaW7fqlgQPWPyqJgjhLC1XeJGNNyAK3ljmIT9GnMs40cQ%3D%3D?uid=0&filename=66.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=1440x692',
+    'https://downloader.disk.yandex.ru/preview/dfcbb72a650e0e496797d0dcc8e407a085292c36213ee6dd5f99dfc1112f035e/68c0c537/Nou3V7u4izD-4jyBdBQNcQOidxwhG6AOgwWP0CPcgSTZNUzpVHAB4BfdePIPWMg8uwnTH58VZe8VIgI-AZbNfg%3D%3D?uid=0&filename=55.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=1440x692',
+    'https://downloader.disk.yandex.ru/preview/ffe75743e836497eadfd3c6ba21776e47244713c55e7da1e236869ac0adaf218/68c0c51d/6iFzr1VTsX5n9LXb_1BCGhQJ5DKF7cYJg-BQHI0PWWfkVKmAO5-Mmr6NCbBaPdRK2wkuq8qzBjVSEoe5mHaMYQ%3D%3D?uid=0&filename=44.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=1440x692',
+    'https://downloader.disk.yandex.ru/preview/3ee4754e534938be207951d91e8a0522bfae4453f824670bca627def66d04ac3/68c0c4dd/XSVWbdFZMWkcj9hnCI-HLFiRJYSLNnj2KrX5KwwrdcVAzWUh5wypEnvml-ZOiBVrTzq5hag4YY-_wbYM9Qo41g%3D%3D?uid=0&filename=33.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=1440x692',
+    'https://downloader.disk.yandex.ru/preview/766ddeda48319143f4ed7e55b4d94151009fcec8c0961dd48599d844f3f05bfd/68c0c48b/6xaNrzBy3MbOV3WGPVscdpRwq-Bin2o4xCuFyQBcbAipaYZzjV802IRwVZuHJx9elQ9imEQrDgrTJJRxBDgoTQ%3D%3D?uid=0&filename=22.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=1440x692',
+    'https://downloader.disk.yandex.ru/preview/ee6f3f83528ad31ce7e1c95724304d01217673b134bc1b1ca63a8bad9e362ecb/68c0c3b7/s0wD3xdWgtIdywkfVd6Bgvoqnx63d4EPQHwyGH_0zfJvijQ7vSJjh-oMDioshHOeWnJGzjOHBC2sbphghh00Iw%3D%3D?uid=0&filename=11.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v3&size=2048x2048',
   ]
   
   // These two are just helpers, they curate spring data, values that are later being interpolated into css

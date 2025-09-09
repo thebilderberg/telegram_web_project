@@ -57,7 +57,7 @@ function BurgerMenu() {
     };
 
   return (
-    <div style={{ width: "100%", position: 'absolute' }}>
+    <div style={{ width: 256, position: 'absolute' }}>
       <Button className="burgerButton" type="primary" onClick={toggleCollapsed}>
         {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
       </Button>
