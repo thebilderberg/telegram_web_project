@@ -1,0 +1,10 @@
+.burgerButton {
+    display: flex;
+    width: 60px;
+    height: 60px;
+}
+
+.collapse {
+    position: absolute;
+    z-index: 999;
+}
