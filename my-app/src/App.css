@@ -1,15 +1,40 @@
 html, body, #root {
   height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  touch-action: none;
+
+  overflow: hidden;       /* убираем скролл */
+  touch-action: none;     /* отключаем свайпы браузера */
   -webkit-user-drag: none;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
+
+  /* фон и текст под тему Telegram */
+  background-color: var(--tg-theme-bg-color, #fff);
+  color: var(--tg-theme-text-color, #000);
 }
 
 .App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100vw;
+  height: 100vh;
+
   text-align: center;
-  background-color:rgb(73, 73, 73);
+
+  /* фон, если Telegram тему не передал */
+  background-color: var(--tg-theme-bg-color, rgb(73, 73, 73));
+  color: var(--tg-theme-text-color, #fff);
+}
+
+/* Для светлой темы можно дополнительно */
+@media (prefers-color-scheme: light) {
+  .App {
+    background-color: var(--tg-theme-bg-color, #f5f5f5);
+    color: var(--tg-theme-text-color, #000);
+  }
 }
