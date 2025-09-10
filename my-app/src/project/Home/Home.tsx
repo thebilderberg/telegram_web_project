@@ -1,15 +1,21 @@
 import React, { useState } from 'react'
 import { useSprings, animated, to as interpolate } from '@react-spring/web'
 import { useDrag } from 'react-use-gesture';
-import "./Home.scss"
+import "./Home.scss";
+import img1 from './11.png';
+import img2 from './22.png';
+import img3 from './33.png';
+import img4 from './44.png';
+import img5 from './55.png';
+import img6 from './66.png';
 
 const cards = [
-    'https://upload.wikimedia.org/wikipedia/commons/f/f5/RWS_Tarot_08_Strength.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/5/53/RWS_Tarot_16_Tower.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/9/9b/RWS_Tarot_07_Chariot.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/d/db/RWS_Tarot_06_Lovers.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/RWS_Tarot_02_High_Priestess.jpg/690px-RWS_Tarot_02_High_Priestess.jpg',
-    'https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg',
+    img6,
+    img5,
+    img4,
+    img3,
+    img2,
+    img1,
   ]
   
   // These two are just helpers, they curate spring data, values that are later being interpolated into css
