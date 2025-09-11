@@ -11,12 +11,21 @@ import {
 import type { MenuProps } from 'antd';
 import { Button, Menu } from 'antd';
 import './BurgerMenu.scss';
+import { Link } from 'react-router-dom';
 
 type MenuItem = Required<MenuProps>['items'][number];
 
 const items: MenuItem[] = [
-  { key: '1', icon: <PieChartOutlined />, label: 'Option 1' },
-  { key: '2', icon: <DesktopOutlined />, label: 'Option 2' },
+  { 
+    key: '1',
+    icon: <PieChartOutlined />, 
+    label: <Link to="/">Главная</Link> 
+  },
+  { 
+    key: '2', 
+    icon: <DesktopOutlined />, 
+    label: <Link to="/clocks">Часы</Link>
+  },
   { key: '3', icon: <ContainerOutlined />, label: 'Option 3' },
   {
     key: 'sub1',
