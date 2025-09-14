@@ -7,12 +7,11 @@ import { GlobalOutlined, SettingOutlined } from '@ant-design/icons';
 import { fullTimezones } from './settings/constans';
 import { ClockDisplayMode, Timezone } from './settings/types';
 
-import "./Clocks.scss";
+import "./Clocks.scss"
 
 export const Clocks = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
-  // 🔹 Локальное состояние
   const [timezone, setTimezone] = useState<Timezone>('moscow');
   const [displayMode, setDisplayMode] = useState<ClockDisplayMode>('classic');
   const [isDark, setIsDark] = useState(false);
@@ -23,7 +22,6 @@ export const Clocks = () => {
     clockElement__canvas_dark: isDark,
   });
 
-  // 🔹 Меню выбора режима отображения
   const displayModeMenu: MenuProps['items'] = [
     { key: 'classic', label: 'Классические' },
     { key: 'dayNight', label: 'С день/ночь' },
@@ -43,7 +41,6 @@ export const Clocks = () => {
     setTimezone(key as Timezone);
   };
 
-  // 🔹 Отрисовка часов
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -72,9 +69,9 @@ export const Clocks = () => {
       // Фон
       ctx.fillStyle = isDark ? '#000' : '#fcfcfd';
       ctx.beginPath();
-      ctx.arc(0, 0, radius - 6, 0, 2 * Math.PI);
+      ctx.arc(0, 0, radius * 0.94, 0, 2 * Math.PI);
       ctx.fill();
-      ctx.lineWidth = 3;
+      ctx.lineWidth = radius * 0.02;
       ctx.strokeStyle = strokeColor;
       ctx.stroke();
 
@@ -83,47 +80,47 @@ export const Clocks = () => {
       } else {
         // Часовые деления
         ctx.strokeStyle = strokeColor;
-        ctx.lineWidth = 2;
+        ctx.lineWidth = radius * 0.015;
         for (let i = 0; i < 12; i++) {
           const angle = (i * 30 * Math.PI) / 180;
           ctx.beginPath();
-          ctx.moveTo(Math.cos(angle) * (radius - 5), Math.sin(angle) * (radius - 5));
-          ctx.lineTo(Math.cos(angle) * (radius - 13), Math.sin(angle) * (radius - 13));
+          ctx.moveTo(Math.cos(angle) * (radius * 0.95), Math.sin(angle) * (radius * 0.95));
+          ctx.lineTo(Math.cos(angle) * (radius * 0.85), Math.sin(angle) * (radius * 0.85));
           ctx.stroke();
         }
 
         // Минутные деления
-        ctx.lineWidth = 1;
+        ctx.lineWidth = radius * 0.007;
         for (let i = 0; i < 60; i++) {
           const angle = (i * 6 * Math.PI) / 180;
           ctx.beginPath();
-          ctx.moveTo(Math.cos(angle) * (radius - 6), Math.sin(angle) * (radius - 6));
-          ctx.lineTo(Math.cos(angle) * (radius - 10), Math.sin(angle) * (radius - 10));
+          ctx.moveTo(Math.cos(angle) * (radius * 0.94), Math.sin(angle) * (radius * 0.94));
+          ctx.lineTo(Math.cos(angle) * (radius * 0.88), Math.sin(angle) * (radius * 0.88));
           ctx.stroke();
         }
 
         // Цифры
-        ctx.font = '12px Arial';
+        ctx.font = `${radius * 0.12}px Arial`;
         ctx.fillStyle = strokeColor;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         for (let i = 1; i <= 12; i++) {
           const angle = ((i * 30 - 90) * Math.PI) / 180;
-          ctx.fillText(i.toString(), Math.cos(angle) * (radius - 22), Math.sin(angle) * (radius - 22));
+          ctx.fillText(i.toString(), Math.cos(angle) * (radius * 0.78), Math.sin(angle) * (radius * 0.78));
         }
 
         // Иконки
         if (displayMode === 'dayNight') {
-          drawDayNightIcon(ctx, hours, radius - 10);
+          drawDayNightIcon(ctx, hours, radius);
         }
         if (displayMode === 'AmPm') {
-          drawAmPmIcon(ctx, hours, radius - 10);
+          drawAmPmIcon(ctx, hours, radius);
         }
 
         // Стрелки
-        drawHand(ctx, ((hours % 12) * 30 * Math.PI) / 180, radius * 0.4, 4, strokeColor);
-        drawHand(ctx, (minutes * 6 * Math.PI) / 180, radius * 0.65, 2.5, strokeColor);
-        drawHand(ctx, (seconds * 6 * Math.PI) / 180, radius * 0.7, 1.6, 'red');
+        drawHand(ctx, ((hours % 12) * 30 * Math.PI) / 180, radius * 0.4, radius * 0.03, strokeColor);
+        drawHand(ctx, (minutes * 6 * Math.PI) / 180, radius * 0.65, radius * 0.02, strokeColor);
+        drawHand(ctx, (seconds * 6 * Math.PI) / 180, radius * 0.75, radius * 0.012, 'red');
       }
 
       ctx.restore();
@@ -139,7 +136,7 @@ export const Clocks = () => {
       <Dropdown menu={{ items: displayModeMenu, onClick: selectDisplayMode }} trigger={['click']}>
         <SettingOutlined className="clockElement__menuIcon" />
       </Dropdown>
-      <canvas className={canvasClass} ref={canvasRef} width={125} height={125} />
+      <canvas className={canvasClass} ref={canvasRef} width={250} height={250} /> 
       <Dropdown
         menu={{ items: timezoneMenu, onClick: selectTimezone }}
         trigger={['click']}
@@ -173,25 +170,25 @@ const drawDayNightIcon = (ctx: CanvasRenderingContext2D, hour: number, radius: n
   const isDay = hour >= 6 && hour < 18;
   ctx.fillStyle = '#0f6b96';
   ctx.beginPath();
-  ctx.arc(0, radius * 0.3, 14, 0, 2 * Math.PI);
+  ctx.arc(0, radius * 0.3, radius * 0.11, 0, 2 * Math.PI);
   ctx.fill();
-  ctx.font = '18px Arial';
+  ctx.font = `${radius * 0.14}px Arial`;
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.fillText(isDay ? '☀️' : '🌙', 0, radius * 0.32);
+  ctx.fillText(isDay ? '☀️' : '🌙', 0, radius * 0.3);
 };
 
 const drawAmPmIcon = (ctx: CanvasRenderingContext2D, hour: number, radius: number) => {
   const isAm = hour >= 0 && hour < 13;
   ctx.fillStyle = '#0f6b96';
   ctx.beginPath();
-  ctx.arc(0, radius * 0.3, 14, 0, 2 * Math.PI);
+  ctx.arc(0, radius * 0.3, radius * 0.11, 0, 2 * Math.PI);
   ctx.fill();
   ctx.fillStyle = 'white';
-  ctx.font = '13px Arial';
+  ctx.font = `${radius * 0.1}px Arial`;
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.fillText(isAm ? 'AM' : 'PM', 0, radius * 0.32);
+  ctx.fillText(isAm ? 'AM' : 'PM', 0, radius * 0.3);
 };
 
 const drawDigitalTime = (
@@ -209,12 +206,12 @@ const drawDigitalTime = (
 
   const timeText = `${hours} ${minutes} ${seconds}`;
 
-  ctx.font = 'bold 18px "Courier New", monospace';
+  ctx.font = `bold ${radius * 0.15}px "Courier New", monospace`;
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
   ctx.fillStyle = color;
 
-  ctx.fillText(timeText, 0, -radius * 0.08);
+  ctx.fillText(timeText, 0, -radius * 0.1);
 
   const textWidth = ctx.measureText(timeText).width;
   const colonSpacing = textWidth / 5.2;
@@ -224,11 +221,11 @@ const drawDigitalTime = (
   ctx.fillText(':', colonSpacing, -radius * 0.1);
   ctx.globalAlpha = 1;
 
-  ctx.font = '12px "Courier New", monospace';
+  ctx.font = `${radius * 0.09}px "Courier New", monospace`;
   const dateStr = time.toLocaleDateString(undefined, {
     weekday: 'short',
     day: 'numeric',
     month: 'short',
   });
-  ctx.fillText(dateStr, 0, radius * 0.3);
+  ctx.fillText(dateStr, 0, radius * 0.35);
 };
