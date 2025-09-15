@@ -26,7 +26,11 @@ const items: MenuItem[] = [
     icon: <DesktopOutlined />, 
     label: <Link to="/clocks">Часы</Link>
   },
-  { key: '3', icon: <ContainerOutlined />, label: 'Option 3' },
+  { 
+    key: '3', 
+    icon: <ContainerOutlined />, 
+    label: <Link to="/grid">Сетка</Link>
+  },
   {
     key: 'sub1',
     label: 'Navigation One',

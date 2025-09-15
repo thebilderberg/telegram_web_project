@@ -3,6 +3,7 @@ import './App.css';
 import BurgerMenu from './project/BurgerMenu/BurgerMenu';
 import Home from './project/Home/Home';
 import { Clocks } from './project/Clocks/Clocks';
+import GridElement from './project/Grid/GridElement';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/clocks" element={<Clocks />} />
+          <Route path="/grid" element={<GridElement />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
     </div>
