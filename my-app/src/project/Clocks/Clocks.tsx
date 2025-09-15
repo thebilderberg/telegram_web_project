@@ -100,7 +100,7 @@ export const Clocks = () => {
         }
 
         // Цифры
-        ctx.font = `${radius * 0.12}px Arial`;
+        ctx.font = `${radius * 0.15}px Arial`;
         ctx.fillStyle = strokeColor;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
@@ -118,9 +118,9 @@ export const Clocks = () => {
         }
 
         // Стрелки
-        drawHand(ctx, ((hours % 12) * 30 * Math.PI) / 180, radius * 0.4, radius * 0.03, strokeColor);
-        drawHand(ctx, (minutes * 6 * Math.PI) / 180, radius * 0.65, radius * 0.02, strokeColor);
-        drawHand(ctx, (seconds * 6 * Math.PI) / 180, radius * 0.75, radius * 0.012, 'red');
+        drawHand(ctx, ((hours % 12) * 30 * Math.PI) / 180, radius * 0.4, radius * 0.06, strokeColor);
+        drawHand(ctx, (minutes * 6 * Math.PI) / 180, radius * 0.65, radius * 0.03, strokeColor);
+        drawHand(ctx, (seconds * 6 * Math.PI) / 180, radius * 0.75, radius * 0.02, 'red');
       }
 
       ctx.restore();
@@ -134,7 +134,7 @@ export const Clocks = () => {
   return (
     <div className="clockElement">
       <Dropdown menu={{ items: displayModeMenu, onClick: selectDisplayMode }} trigger={['click']}>
-        <SettingOutlined className="clockElement__menuIcon" />
+        <SettingOutlined style={{height: "100px"}} className="clockElement__menuIcon" />
       </Dropdown>
       <canvas className={canvasClass} ref={canvasRef} width={250} height={250} /> 
       <Dropdown
@@ -170,12 +170,12 @@ const drawDayNightIcon = (ctx: CanvasRenderingContext2D, hour: number, radius: n
   const isDay = hour >= 6 && hour < 18;
   ctx.fillStyle = '#0f6b96';
   ctx.beginPath();
-  ctx.arc(0, radius * 0.3, radius * 0.11, 0, 2 * Math.PI);
+  ctx.arc(0, radius * 0.4, radius * 0.20, 0, 2 * Math.PI);
   ctx.fill();
-  ctx.font = `${radius * 0.14}px Arial`;
+  ctx.font = `${radius * 0.25}px Arial`;
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.fillText(isDay ? '☀️' : '🌙', 0, radius * 0.3);
+  ctx.fillText(isDay ? '☀️' : '🌙', 0, radius * 0.4);
 };
 
 const drawAmPmIcon = (ctx: CanvasRenderingContext2D, hour: number, radius: number) => {
