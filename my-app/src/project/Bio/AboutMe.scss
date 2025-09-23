@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@400;700&display=swap");
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #fff1eb 0%, #ace0f9 100%);
+  font-family: "Comic Neue", cursive;
+  overflow-y: auto;
+}
+
+.about {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px 100px;
+  color: #222;
+
+  h1, h2, h3 {
+    font-family: "Fredoka One", cursive;
+    color: #333;
+  }
+
+  .about__hero {
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+    background: linear-gradient(135deg, #ac64aa 0%, #8577c7 100%);
+    color: white;
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      max-width: 700px;
+      margin: 0 auto 10px;
+    }
+
+    .highlight {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+  }
+
+  .about__section {
+    margin-bottom: 50px;
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #cd7ce6;
+    }
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .date {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    ul {
+      margin-top: 15px;
+      padding-left: 20px;
+
+      li {
+        margin-bottom: 8px;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+
+    .skill {
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      border-radius: 15px;
+      padding: 12px 20px;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.05) rotate(-1deg);
+      }
+    }
+  }
+
+  .extras {
+    list-style: none;
+    padding: 0;
+
+    li {
+      background: #fff;
+      margin-bottom: 12px;
+      padding: 14px 18px;
+      border-radius: 14px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      a {
+        color: #1677ff;
+        font-weight: 700;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
