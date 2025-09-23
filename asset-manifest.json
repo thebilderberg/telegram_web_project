@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/telegram_web_project/static/css/main.038ff9f4.css",
+    "main.css": "/telegram_web_project/static/css/main.20a010fb.css",
     "main.js": "/telegram_web_project/static/js/main.2c739cd1.js",
     "static/js/453.453f2ef2.chunk.js": "/telegram_web_project/static/js/453.453f2ef2.chunk.js",
     "static/media/44.png": "/telegram_web_project/static/media/44.40f2804ab68da52dfa9e.png",
@@ -10,12 +10,12 @@
     "static/media/22.png": "/telegram_web_project/static/media/22.48f3f75499806f6b70d8.png",
     "static/media/55.png": "/telegram_web_project/static/media/55.a3136bc1868c78746d30.png",
     "index.html": "/telegram_web_project/index.html",
-    "main.038ff9f4.css.map": "/telegram_web_project/static/css/main.038ff9f4.css.map",
+    "main.20a010fb.css.map": "/telegram_web_project/static/css/main.20a010fb.css.map",
     "main.2c739cd1.js.map": "/telegram_web_project/static/js/main.2c739cd1.js.map",
     "453.453f2ef2.chunk.js.map": "/telegram_web_project/static/js/453.453f2ef2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.038ff9f4.css",
+    "static/css/main.20a010fb.css",
     "static/js/main.2c739cd1.js"
   ]
 }
