@@ -7,9 +7,10 @@ html, body, #root {
   -webkit-user-drag: none;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
+  background: linear-gradient(135deg, #fff1eb 0%, #ace0f9 100%);
 }
 
 .App {
   text-align: center;
-  background-color:rgb(73, 73, 73);
+  background-color:rgb(4, 0, 0);
 }
