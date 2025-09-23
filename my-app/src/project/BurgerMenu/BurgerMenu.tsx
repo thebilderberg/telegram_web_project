@@ -33,10 +33,10 @@ const items: MenuItem[] = [
   },
   {
     key: 'sub1',
-    label: 'Navigation One',
+    label: 'О себе',
     icon: <MailOutlined />,
     children: [
-      { key: '5', label: 'Option 5' },
+      { key: '5', label: <Link to="/bio">Биография</Link> },
       { key: '6', label: 'Option 6' },
       { key: '7', label: 'Option 7' },
       { key: '8', label: 'Option 8' },
