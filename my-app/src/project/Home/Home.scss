@@ -31,6 +31,10 @@
     touch-action: none;
     color: rgb(143, 142, 142);
   }
+
+  .deck, .container {
+    touch-action: none;
+  }
   
   .deck > div {
     background-color: white;
